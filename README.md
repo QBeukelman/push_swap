@@ -1,8 +1,6 @@
 
 # push_swap
 
-### About
-
 The core curriculum of all 42 schools worldwide includes a case study on sorting algorithms and their performances. This project involves the task of sorting a sequence of random numbers that are arranged in a stack data structure (stack_A), with the assistance of an empty auxiliary stack (stack B) and a set of specific stack operations. Our task specifies the operations allowed, which are described as follows:
 
 > **`sa`** : **swap a** - Swap the first 2 elements at the top of stack_A. Do nothing if there is only one or no elements).
@@ -27,10 +25,12 @@ The core curriculum of all 42 schools worldwide includes a case study on sorting
 
 > **`rrr`** : **`rra`** and **`rrb`** at the same time.
 
+---
+
 <br />
 
 
-### The push_swap program
+## The push_swap program
 
 The primary goal of `push_swap` is to output to `STDOUT` a series of instructions necessary to sort the **stack_A** provided as the program's argument. Each instruction should be followed by a line break (\n). The **stack_A** should be sorted such that its lowest element is at the top, and **stack_B** should be empty.
 
@@ -45,29 +45,35 @@ pa
 pa
 ra
 ```
-
+---
 <br />
 
 
-## The Algorithm
+# The Algorithm
 
-### Sorting 3 Random Numbers
+## Sorting 3 Random Numbers
 
 Upon investigation, I have discovered that there are five potential scenarios for arranging a set of three random numbers in Stack_A. My objective is to sort these numbers in ascending order, using no more than two steps. The specific actions I take will depend on the initial position of the top, middle, and bottom numbers. To determine the appropriate course of action for each scenario, I compare the top to the middle number, the middle to the bottom number, and the bottom to the top number. Based on these comparisons, I determine which actions to take in order to sort the numbers correctly.
 
+---
+
 <br />
 
 
-### Sorting 5 Random Numbers
+## Sorting 5 Random Numbers
 
 We must now sort a set of five random numbers placed in Stack_A, while adhering to the limit of 12 actions. We can optimize our code by building on the logic used for sorting three random numbers. To accomplish this, we will move the first two numbers from the top of Stack_A to Stack_B, and bring them back once the three remaining numbers in Stack_A are sorted in ascending order.
 
+---
+
 <br />
 
 
-### Sorting 100 Random Numbers `Bucket Sort Algorythm`
+## Sorting 100 Random Numbers `Bucket Sort Algorythm`
 
 > **Moves** `+-500`
+
+![alt text](https://uploads-ssl.webflow.com/60255c87f21230edfb5fa38e/63f5f5db3b79241354301c2c_ezgif-4-5227d24a3c.gif)
 
 To sort a list of 100 random numbers in less than the allowed 1500 operations, we will need to adopt a new approach. For this I have chosen to use a combination of the `Bucket Sort Algorythm` and the `Incertion Sort Algorythm`. To do so, first numbers are grouped into buckets of similar values from `stack_A`, into `stack_B`. Then the largest number, within the range of a bucket, is brought to the top of `stack_B`. Then the largest number is pushed from `stack B` to `stack B`.
 
@@ -89,13 +95,16 @@ Let's assume a random list of 100 numbers 0-99, and the number of buckets to be 
 
 Once the stack_A is empty, all numbers should be in their respective groups contained in stack_B. We will now emply the `Incertion Sort Algorythm` to push each number back to stack A, starting from the highest. Search for the highest number in stack_B, within the range of the group. Bring the highest number to the top of stack_B using, first the RB operation, then push this number to the top of stack_A. Don't forget to keep the grouped stack_B in order, by reversing the changes using the RRB operation to place any displaced number back to their respective groups. Repeat this process for each group and untill stack_B is empty. Voilà, the list of 100 random numbers is sorted.
 
-
-![alt text](https://uploads-ssl.webflow.com/60255c87f21230edfb5fa38e/63f5f5db3b79241354301c2c_ezgif-4-5227d24a3c.gif)
+---
 
 <br />
 
 
-### Sorting 500 Random Numbers `Radix Sort Algorythm`
+## Sorting 500 Random Numbers `Radix Sort Algorythm`
+
+> **Moves** `+-5000`
+
+![alt text](https://uploads-ssl.webflow.com/60255c87f21230edfb5fa38e/63f5f5db3b79241354301c2c_ezgif-4-5227d24a3c.gif)
 
 With the above `Bucket Sort Algorythm`, I was not able to sort a list of 500 integers with `11500 operations`, which coincidentally is the maximum number of moves for this section of the assignemnt. To sort a list of 500 random numbers in less than the allowed 11500 operations, we will need to adopt a new approach.
 
