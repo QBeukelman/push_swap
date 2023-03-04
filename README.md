@@ -116,11 +116,11 @@ With the above `Bucket Sort Algorythm`, I was not able to sort a list of 500 int
 
 For this I have chosen to use the `Radix Sort Algorythm`, for it is both stable and effecient with large lists. The time complexity of radix sort is O(n * d), where d is the number of digits in the largest number k, expressed in base b, and can be computed as d = floor(log_b(k) + 1) for a given base b. This algorithm is highly efficient for sorting non-negative integers.
 
-### First index stack_A
+### First: Index stack_A
 
 As the radix sort algorythm only works with positive numbers, we will need to index the stack. Traverse the stack to find the lowest value, set its index to 0, inrement the index, and repeate the process untill all nodes have been indexed. As well as the index represented as in integer, we will also store the index value for each node as a 32 bit binary.
 
-### Second push nodes with bit value 0 to stack_B
+### Second: Push nodes with bit value 0 to stack_B
 
 Each of the nodes in stack_A now contains an integer index as well as the same integer index, but expressed in a 32 bit binary char array, as shown below. This this, we will decide how many significant bits are present in our 32 bit binary indexes. For the decimal number 100, there are 4 significant bits in the binary array, as shown below. To implement the radix sort algorythm, start at the least significant bit, the rightmost bit, in this case 0. The node with value 100, has a 0 in the position of the least significant bit, so we shall push it to stack_B. The process is repeated until, stack_A contains nodes ending in 1, and stack_B contains nodes where the binary array ends only in a 0. Now, push all nodes from stack_B, back to the top of stack_A. Repeat this process for each of the significant bits in the binary char array, and stack_A will be in order.
 
@@ -128,9 +128,8 @@ Each of the nodes in stack_A now contains an integer index as well as the same i
 # Deciman 100 represented in 32 bit binary
 00000000000000000000000000001010
 ```
----
-<br />
-
 
 `Leo Fu` [Push_Swap Tutorial](https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e)
 
+---
+<br />
