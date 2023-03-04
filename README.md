@@ -55,6 +55,8 @@ ra
 
 Upon investigation, I have discovered that there are five potential scenarios for arranging a set of three random numbers in Stack_A. My objective is to sort these numbers in ascending order, using no more than two steps. The specific actions I take will depend on the initial position of the top, middle, and bottom numbers. To determine the appropriate course of action for each scenario, I compare the top to the middle number, the middle to the bottom number, and the bottom to the top number. Based on these comparisons, I determine which actions to take in order to sort the numbers correctly.
 
+Referance: `Jamie Dawson` [Push_Swap: The least amount of moves with two stacks](https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a)
+
 ---
 
 <br />
@@ -63,6 +65,8 @@ Upon investigation, I have discovered that there are five potential scenarios fo
 ## Sorting 5 Random Numbers
 
 We must now sort a set of five random numbers placed in Stack_A, while adhering to the limit of 12 actions. We can optimize our code by building on the logic used for sorting three random numbers. To accomplish this, we will move the first two numbers from the top of Stack_A to Stack_B, and bring them back once the three remaining numbers in Stack_A are sorted in ascending order.
+
+Referance: `Jamie Dawson` [Push_Swap: The least amount of moves with two stacks](https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a)
 
 ---
 
@@ -95,6 +99,8 @@ Let's assume a random list of 100 numbers 0-99, and the number of buckets to be 
 
 Once the stack_A is empty, all numbers should be in their respective groups contained in stack_B. We will now emply the `Incertion Sort Algorythm` to push each number back to stack A, starting from the highest. Search for the highest number in stack_B, within the range of the group. Bring the highest number to the top of stack_B using, first the RB operation, then push this number to the top of stack_A. Don't forget to keep the grouped stack_B in order, by reversing the changes using the RRB operation to place any displaced number back to their respective groups. Repeat this process for each group and untill stack_B is empty. Voilà, the list of 100 random numbers is sorted.
 
+Referance: `Jamie Dawson` [Push_Swap: The least amount of moves with two stacks](https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a)
+
 ---
 
 <br />
@@ -116,5 +122,5 @@ As the radix sort algorythm only works with positive numbers, we will need to in
 
 ### Second push nodes with bit value 0 to stack_B
 
-
+Referance: `Leo Fu` [Push_Swap Tutorial](https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e)
 
