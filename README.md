@@ -53,9 +53,9 @@ ra
 
 ## Sorting 3 Random Numbers
 
-Upon investigation, I have discovered that there are five potential scenarios for arranging a set of three random numbers in Stack_A. My objective is to sort these numbers in ascending order, using no more than two steps. The specific actions I take will depend on the initial position of the top, middle, and bottom numbers. To determine the appropriate course of action for each scenario, I compare the top to the middle number, the middle to the bottom number, and the bottom to the top number. Based on these comparisons, I determine which actions to take in order to sort the numbers correctly.
+Upon investigation, I have discovered that there are five potential scenarios for arranging a set of three random numbers in Stack_A. My objective is to sort these numbers in ascending order, using no more than two steps. The specific actions I take will depend on the initial positions of the top, middle, and bottom numbers. To determine the appropriate course of action for each scenario, I compare the top to the middle number, the middle to the bottom number, and the bottom to the top number. Based on these comparisons, I determine which actions to take in order to sort the numbers correctly.
 
-`Jamie Dawson` [Push_Swap: The least amount of moves with two stacks](https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a)
+*source:* `Jamie Dawson` [Push_Swap: The least amount of moves with two stacks](https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a)
 
 ---
 
@@ -66,7 +66,7 @@ Upon investigation, I have discovered that there are five potential scenarios fo
 
 We must now sort a set of five random numbers placed in Stack_A, while adhering to the limit of 12 actions. We can optimize our code by building on the logic used for sorting three random numbers. To accomplish this, we will move the first two numbers from the top of Stack_A to Stack_B, and bring them back once the three remaining numbers in Stack_A are sorted in ascending order.
 
-`Jamie Dawson` [Push_Swap: The least amount of moves with two stacks](https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a)
+*source:* `Jamie Dawson` [Push_Swap: The least amount of moves with two stacks](https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a)
 
 ---
 
@@ -99,7 +99,7 @@ Let's assume a random list of 100 numbers 0-99, and the number of buckets to be 
 
 Once the stack_A is empty, all numbers should be in their respective groups contained in stack_B. We will now emply the `Incertion Sort Algorythm` to push each number back to stack A, starting from the highest. Search for the highest number in stack_B, within the range of the group. Bring the highest number to the top of stack_B using, first the RB operation, then push this number to the top of stack_A. Don't forget to keep the grouped stack_B in order, by reversing the changes using the RRB operation to place any displaced number back to their respective groups. Repeat this process for each group and untill stack_B is empty. Voilà, the list of 100 random numbers is sorted.
 
-`Jamie Dawson` [Push_Swap: The least amount of moves with two stacks](https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a)
+*source:* `Jamie Dawson` [Push_Swap: The least amount of moves with two stacks](https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a)
 
 ---
 
@@ -122,14 +122,14 @@ As the radix sort algorythm only works with positive numbers, we will need to in
 
 ### Second: Push nodes with bit value 0 to stack_B
 
-Each of the nodes in stack_A now contains an integer index as well as the same integer index, but expressed in a 32 bit binary char array, as shown below. This this, we will decide how many significant bits are present in our 32 bit binary indexes. For the decimal number 100, there are 4 significant bits in the binary array, as shown below. To implement the radix sort algorythm, start at the least significant bit, the rightmost bit, in this case 0. The node with value 100, has a 0 in the position of the least significant bit, so we shall push it to stack_B. The process is repeated until, stack_A contains nodes ending in 1, and stack_B contains nodes where the binary array ends only in a 0. Now, push all nodes from stack_B, back to the top of stack_A. Repeat this process for each of the significant bits in the binary char array, and stack_A will be in order.
+Each of the nodes in stack_A now contains an integer index as well as the same integer index, but expressed in a 32 bit binary char array, as shown below. With this, we will decide how many significant bits are present in our 32 bit binary indexes. For the decimal number 100, there are 4 significant bits in the binary array, as shown below. To implement the radix sort algorythm, start at the least significant bit, the rightmost bit, in this case 0. The node with value 100, has a 0 in the position of the least significant bit, so we shall push it to stack_B. The process is repeated until, stack_A contains nodes ending in 1, and stack_B contains nodes where the binary array ends only in a 0. Now, push all nodes from stack_B, back to the top of stack_A. Repeat this process for each of the significant bits in the binary char array, and stack_A will be in order.
 
 ```shell
 # Deciman 100 represented in 32 bit binary
 00000000000000000000000000001010
 ```
 
-`Leo Fu` [Push_Swap Tutorial](https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e)
+*source:* `Leo Fu` [Push_Swap Tutorial](https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e)
 
 ---
 <br />
