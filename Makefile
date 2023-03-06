@@ -6,7 +6,7 @@
 #    By: qbeukelm <qbeukelm@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/02/01 11:21:13 by qbeukelm      #+#    #+#                  #
-#    Updated: 2023/03/03 10:39:56 by quentinbeuk   ########   odam.nl          #
+#    Updated: 2023/03/06 14:49:55 by quentinbeuk   ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ NANE_EXCUITABLE = push_swap
 
 # ===== Compile =====
 CC = gcc
-CFLAGS = -I./INCLUDES
+CFLAGS = -I./INCLUDES -g -fsanitize=address
 
 
 # ===== Colors =====
@@ -50,6 +50,7 @@ SOURCES_STACK = index.c \
 			operations.c \
 			print_stacks.c \
 			stack.c \
+
 
 # ===== Manage Directries =====
 INC = inc
@@ -104,7 +105,7 @@ $(NAME): $(O_SOURCES) $(O_SOURCES_ERRORS) $(O_SOURCES_BUCKETS) $(O_SOURCES_RADIX
 	@mv $(NAME) $(DIR_SOURCES)
 	@$(AR) rcs $@ $^
 	@ranlib $@
-	@echo "$(BLUE)$(BOLD)\nCompiling program: so_long ...$(RESET)"
+	@echo "$(BLUE)$(BOLD)\nCompiling program: push_swap ...$(RESET)"
 	@rm $(NAME)
 	@$(CC) -o $(NANE_EXCUITABLE) $(DIR_SOURCES)/$(SOURCES) $(DIR_SOURCES_ERRORS)/*.c $(DIR_SOURCES_BUCKETS)/*.c $(DIR_SOURCES_RADIX)/*.c $(DIR_SOURCES_SMALL)/*.c $(DIR_SOURCES_STACK)/*.c $(DIR_SOURCES)/$(NAME)
 	@echo "$(GREEN)$(BOLD)\nCompile sucessfull!\n$(RESET)"

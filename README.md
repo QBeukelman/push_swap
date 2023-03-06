@@ -75,9 +75,9 @@ We must now sort a set of five random numbers placed in Stack_A, while adhering 
 
 ## Sorting 100 Random Numbers `Bucket Sort Algorythm`
 
-> **Moves** `+-500`
+> **Moves** `+-1000`
 
-![alt text](https://uploads-ssl.webflow.com/60255c87f21230edfb5fa38e/63f5f5db3b79241354301c2c_ezgif-4-5227d24a3c.gif)
+![alt text](https://uploads-ssl.webflow.com/60255c87f21230edfb5fa38e/6405ec7eda2becbc0ecef677_push_swap%20100.gif)
 
 To sort a list of 100 random numbers in less than the allowed 1500 operations, we will need to adopt a new approach. For this I have chosen to use a combination of the `Bucket Sort Algorythm` and the `Incertion Sort Algorythm`. To do so, first numbers are grouped into buckets of similar values from `stack_A`, into `stack_B`. Then the largest number, within the range of a bucket, is brought to the top of `stack_B`. Then the largest number is pushed from `stack B` to `stack A`.
 
@@ -112,7 +112,7 @@ Once the stack_A is empty, all numbers should be in their respective groups cont
 
 > **Moves** `+-5000`
 
-![alt text](https://uploads-ssl.webflow.com/60255c87f21230edfb5fa38e/63f5f5db3b79241354301c2c_ezgif-4-5227d24a3c.gif)
+![alt text](https://uploads-ssl.webflow.com/60255c87f21230edfb5fa38e/6405eba6d9b73ba37d36ab0c_push_swap%20500.gif)
 
 With the above `Bucket Sort Algorythm`, I was not able to sort a list of 500 integers with `11500 operations`, which coincidentally, is the maximum number of moves for this section of the assignemnt. To sort a list of 500 random numbers in less than the allowed 11500 operations, we will need to adopt a new approach.
 
@@ -127,7 +127,7 @@ As the radix sort algorythm only works with positive numbers, we will need to in
 Each of the nodes in stack_A now contains an integer index as well as the same integer index, but expressed in a 32 bit binary char array, as shown below. With this, we will decide how many significant bits are present in our 32 bit binary indexes. For the decimal number 100, there are 4 significant bits in the binary array, as shown below. To implement the radix sort algorythm, start at the least significant bit, the rightmost bit, in this case 0. The node with value 100, has a 0 in the position of the least significant bit, so we shall push it to stack_B. The process is repeated until, stack_A contains nodes ending in 1, and stack_B contains nodes where the binary array ends only in a 0. Now, push all nodes from stack_B, back to the top of stack_A. Repeat this process for each of the significant bits in the binary char array, and stack_A will be in order.
 
 ```shell
-# Deciman 100 represented in 32 bit binary
+# Decimal 100 represented in 32 bit binary
 00000000000000000000000000001010
 ```
 

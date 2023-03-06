@@ -6,7 +6,7 @@
 /*   By: quentinbeukelman <quentinbeukelman@stud      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/02 11:49:57 by quentinbeuk   #+#    #+#                 */
-/*   Updated: 2023/03/02 13:29:01 by quentinbeuk   ########   odam.nl         */
+/*   Updated: 2023/03/06 13:55:07 by quentinbeuk   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ bool	ft_is_duplicate(int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
-		j = 2;
-		while (j < i)
+		j = i + 1;
+		while (j < argc)
 		{
 			len = ft_len_longest(argv[i], argv[j]);
 			if (ft_strncmp(argv[i], argv[j], len) == 0)

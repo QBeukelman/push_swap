@@ -6,7 +6,7 @@
 /*   By: quentinbeukelman <quentinbeukelman@stud      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/02 10:21:29 by quentinbeuk   #+#    #+#                 */
-/*   Updated: 2023/03/03 10:59:03 by quentinbeuk   ########   odam.nl         */
+/*   Updated: 2023/03/06 13:40:04 by quentinbeuk   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ void	ft_error_message(char *msg)
 bool	ft_check_input(int argc, char **argv)
 /* 1. Valid input
 2. Duplicate
-3. Overflow
-!! 4. Memory errors - in init_struct */
+3. Overflow */
 {
 	if (!ft_check_valid_char(argc, argv))
 	{

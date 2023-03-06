@@ -6,7 +6,7 @@
 /*   By: quentinbeukelman <quentinbeukelman@stud      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/02 12:51:28 by quentinbeuk   #+#    #+#                 */
-/*   Updated: 2023/03/03 12:50:23 by quentinbeuk   ########   odam.nl         */
+/*   Updated: 2023/03/06 13:58:17 by quentinbeuk   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ char	*ft_itob(int i)
 }
 
 int	get_longest_binary(t_push_swap *push_swap)
-/* Returns the how many significant bits occur in the 32 bit binary string
+/* Returns number of significant bits that occur in the 32 bit binary string
 i = 2 = 00000000000000000000000000000010
 return = 1, the last significant bit starting from the back occures in
 position 1  */
