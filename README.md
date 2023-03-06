@@ -79,9 +79,9 @@ We must now sort a set of five random numbers placed in Stack_A, while adhering 
 
 ![alt text](https://uploads-ssl.webflow.com/60255c87f21230edfb5fa38e/63f5f5db3b79241354301c2c_ezgif-4-5227d24a3c.gif)
 
-To sort a list of 100 random numbers in less than the allowed 1500 operations, we will need to adopt a new approach. For this I have chosen to use a combination of the `Bucket Sort Algorythm` and the `Incertion Sort Algorythm`. To do so, first numbers are grouped into buckets of similar values from `stack_A`, into `stack_B`. Then the largest number, within the range of a bucket, is brought to the top of `stack_B`. Then the largest number is pushed from `stack B` to `stack B`.
+To sort a list of 100 random numbers in less than the allowed 1500 operations, we will need to adopt a new approach. For this I have chosen to use a combination of the `Bucket Sort Algorythm` and the `Incertion Sort Algorythm`. To do so, first numbers are grouped into buckets of similar values from `stack_A`, into `stack_B`. Then the largest number, within the range of a bucket, is brought to the top of `stack_B`. Then the largest number is pushed from `stack B` to `stack A`.
 
-#### First: Push stack_A to stack_B with Buckets
+#### First: Push stack_A to stack_B using Buckets
 
 Let's assume a random list of 100 numbers 0-99, and the number of buckets to be 5.
 
@@ -89,15 +89,17 @@ Let's assume a random list of 100 numbers 0-99, and the number of buckets to be 
 
 > Bucket 5 is 80-99
 
+> Note: With this implementation of bucket sort, we will need to index stack_A. This is because, when presented with outliers, the buckts loose effectiveness. E.g. Suppose the above list of random numbers from 0-99, and add one more integer to the stack, say 2,147,483,647. With the outlier, all values 0-99 will be present in the first bucket. Indexing stack_A, and determining the bucket values using the index, will correctly handle outliers.
+
 **Step 1:** Traverse stack_A in the forward direction to find the fist occurance of a number in bracket 1. Let's call this **hold_first**.
 
 **Step 2:** Traverse stack_A in the backward direction to find the fist occurance of a number in bracket 1. Call this **hold_second**.
 
-**Step 3:** Compare the number of operations it would take to move hold_first and hold_second to the top of stack_A. If a number occures in the first half of the list, we can simply perform the RA operation untill the number surfaces. If the number occurs in the second half of the list, we can perform the RRA operation untill this number surfaces. To do so, first, we find the center of the list by dividing its length by 2. Then, given the positions of hold_first and hold_socond, determine which is nearest their respective edge of the list. Push your choise of hold_first or hold_second, now at the top of stack_A, to the op of stack_B.
+**Step 3:** Compare the number of operations needed to move hold_first and hold_second, respectivly, to the top of stack_A. If a number occures in the first half of the list, we can simply perform the **RA** operation untill the number surfaces. If the number occurs in the second half of the list, we can perform the **RRA** operation untill this number surfaces. To do so, first, we find the center of the list by dividing its length by 2. Then, given the positions of hold_first and hold_socond, determine which is nearest their respective edge of the list. Push your choise of hold_first or hold_second, now at the top of stack_A, to the op of stack_B.
 
-#### Second: Push stack_B back to stack_A starting with the highest
+#### Second: Push stack_B back to stack_A starting with the highest value
 
-Once the stack_A is empty, all numbers should be in their respective groups contained in stack_B. We will now emply the `Incertion Sort Algorythm` to push each number back to stack A, starting from the highest. Search for the highest number in stack_B, within the range of the group. Bring the highest number to the top of stack_B using, first the RB operation, then push this number to the top of stack_A. Don't forget to keep the grouped stack_B in order, by reversing the changes using the RRB operation to place any displaced number back to their respective groups. Repeat this process for each group and untill stack_B is empty. Voilà, the list of 100 random numbers is sorted.
+Once the stack_A is empty, all numbers should be in their respective groups contained in stack_B. We will now employ the `Incertion Sort Algorythm` to push each node back to stack_A, starting from the highest value. Search for the highest number in stack_B, within the range of the group. Bring the highest number to the top of stack_B using, first the RB operation, then push this number to the top of stack_A. Don't forget to keep the grouped stack_B in order, by reversing the changes using the RRB operation to place any displaced number back to their respective groups. Repeat this process for each group and untill stack_B is empty. Voilà, the list of 100 random numbers is sorted.
 
 *source:* `Jamie Dawson` [Push_Swap: The least amount of moves with two stacks](https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a)
 
@@ -112,7 +114,7 @@ Once the stack_A is empty, all numbers should be in their respective groups cont
 
 ![alt text](https://uploads-ssl.webflow.com/60255c87f21230edfb5fa38e/63f5f5db3b79241354301c2c_ezgif-4-5227d24a3c.gif)
 
-With the above `Bucket Sort Algorythm`, I was not able to sort a list of 500 integers with `11500 operations`, which coincidentally is the maximum number of moves for this section of the assignemnt. To sort a list of 500 random numbers in less than the allowed 11500 operations, we will need to adopt a new approach.
+With the above `Bucket Sort Algorythm`, I was not able to sort a list of 500 integers with `11500 operations`, which coincidentally, is the maximum number of moves for this section of the assignemnt. To sort a list of 500 random numbers in less than the allowed 11500 operations, we will need to adopt a new approach.
 
 For this I have chosen to use the `Radix Sort Algorythm`, for it is both stable and effecient with large lists. The time complexity of radix sort is O(n * d), where d is the number of digits in the largest number k, expressed in base b, and can be computed as d = floor(log_b(k) + 1) for a given base b. This algorithm is highly efficient for sorting non-negative integers.
 
